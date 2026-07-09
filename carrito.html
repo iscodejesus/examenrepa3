@@ -47,73 +47,101 @@
     <h2 id="total"></h2>
 
     <center>
+
         <button class="vaciar-btn" onclick="vaciarCarrito()">
             Vaciar Carrito
         </button>
+
+        <br><br>
+
+        <button class="vaciar-btn" onclick="abrirModal()">
+            Finalizar Compra
+        </button>
+
     </center>
 
-    <div class="pago-container">
+    <!-- VENTANA DE COMPRA -->
 
-        <h2>Finalizar Compra</h2>
+    <div id="modalPago" class="modal">
 
-        <form class="form-pago" onsubmit="confirmarCompra(event)">
+        <div class="modal-contenido">
 
-            <input
-                type="text"
-                placeholder="Nombre Completo"
-                required
-            >
+            <span class="cerrar" onclick="cerrarModal()">
+                &times;
+            </span>
 
-            <input
-                type="email"
-                placeholder="Correo Electrónico"
-                required
-            >
+            <h2>Confirmar Compra ☕</h2>
 
-            <input
-                type="tel"
-                placeholder="Número de Teléfono"
-                required
-            >
+            <form onsubmit="confirmarCompra(event)">
 
-            <select required>
-                <option value="">
-                    Seleccione Método de Pago
-                </option>
+                <input
+                    type="text"
+                    placeholder="Nombre Completo"
+                    required
+                >
 
-                <option>
-                    Tarjeta de Crédito
-                </option>
+                <input
+                    type="email"
+                    placeholder="Correo Electrónico"
+                    required
+                >
 
-                <option>
-                    Tarjeta de Débito
-                </option>
+                <input
+                    type="tel"
+                    placeholder="Número de Teléfono"
+                    required
+                >
 
-                <option>
-                    Efectivo al Recibir
-                </option>
-            </select>
+                <input
+                    type="text"
+                    placeholder="Dirección de Entrega"
+                    required
+                >
 
-            <input
-                type="text"
-                placeholder="Número de Tarjeta"
-            >
+                <select required>
+                    <option value="">
+                        Seleccione Método de Pago
+                    </option>
 
-            <input
-                type="text"
-                placeholder="Fecha de Vencimiento (MM/AA)"
-            >
+                    <option>
+                        Tarjeta de Crédito
+                    </option>
 
-            <input
-                type="text"
-                placeholder="CVV"
-            >
+                    <option>
+                        Tarjeta de Débito
+                    </option>
 
-            <button type="submit" class="vaciar-btn">
-                Confirmar Compra
-            </button>
+                    <option>
+                        Efectivo al Recibir
+                    </option>
+                </select>
 
-        </form>
+                <input
+                    type="text"
+                    placeholder="Número de Tarjeta"
+                >
+
+                <div class="fila">
+
+                    <input
+                        type="text"
+                        placeholder="MM/AA"
+                    >
+
+                    <input
+                        type="text"
+                        placeholder="CVV"
+                    >
+
+                </div>
+
+                <button type="submit">
+                    Confirmar Pedido
+                </button>
+
+            </form>
+
+        </div>
 
     </div>
 
@@ -121,14 +149,26 @@
 
     <script>
 
-        function toggleMenu() {
+        function toggleMenu(){
             document
                 .querySelector(".nav")
                 .classList
                 .toggle("active");
         }
 
-        function confirmarCompra(event) {
+        function abrirModal(){
+            document
+                .getElementById("modalPago")
+                .style.display = "block";
+        }
+
+        function cerrarModal(){
+            document
+                .getElementById("modalPago")
+                .style.display = "none";
+        }
+
+        function confirmarCompra(event){
 
             event.preventDefault();
 
@@ -136,6 +176,7 @@
                 "¡Compra confirmada! Gracias por comprar en AC Coffee ☕"
             );
 
+            cerrarModal();
         }
 
     </script>
