@@ -1,50 +1,12 @@
-function agregarCarrito(nombre, precio, imagen, cantidad = 1){
-    let carrito =
-    JSON.parse(localStorage.getItem("carrito")) || [];
+function mostrarCarrito() {
 
-    carrito.push({
-        nombre, 
-        precio,
-        imagen,
-        cantidad
-    });
+    let carrito = JSON.parse(localStorage.getItem("carrito")) || [];
 
-    localStorage.setItem(
-        "carrito",
-        JSON.stringify(carrito)
-    );
+    let contenedor = document.getElementById("carrito-contenedor");
 
-    alert(nombre + " agregado al carrito");
-}
-const existente = carrito.find(p => p.nombre === nombre);
+    let totalElemento = document.getElementById("total");
 
-if(existente){
-
-    existente.cantidad += cantidad;
-
-}else{
-
-    carrito.push({
-        nombre,
-        precio,
-        imagen,
-        cantidad
-    });
-
-}
-
-function mostrarCarrito(){
-
-    let carrito =
-    JSON.parse(localStorage.getItem("carrito")) || [];
-
-    let contenedor =
-    document.getElementById("carrito-contenedor");
-
-    let totalElemento =
-    document.getElementById("total");
-
-    if(!contenedor) return;
+    if (!contenedor) return;
 
     contenedor.innerHTML = "";
 
@@ -71,26 +33,21 @@ function mostrarCarrito(){
         `;
     });
 
-    totalElemento.innerHTML =
-    "Total: Q" + total;
+    totalElemento.innerHTML = "Total: Q" + total;
 }
 
-function eliminarProducto(index){
+function eliminarProducto(index) {
 
-    let carrito =
-    JSON.parse(localStorage.getItem("carrito")) || [];
+    let carrito = JSON.parse(localStorage.getItem("carrito")) || [];
 
-    carrito.splice(index,1);
+    carrito.splice(index, 1);
 
-    localStorage.setItem(
-        "carrito",
-        JSON.stringify(carrito)
-    );
+    localStorage.setItem("carrito", JSON.stringify(carrito));
 
     mostrarCarrito();
 }
 
-function vaciarCarrito(){
+function vaciarCarrito() {
 
     localStorage.removeItem("carrito");
 
