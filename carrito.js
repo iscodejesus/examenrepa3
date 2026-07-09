@@ -1,12 +1,12 @@
-function agregarCarrito(nombre, precio, imagen){
-
+function agregarCarrito(nombre, precio, imagen, cantidad = 1){
     let carrito =
     JSON.parse(localStorage.getItem("carrito")) || [];
 
     carrito.push({
-        nombre: nombre,
-        precio: precio,
-        imagen: imagen
+        nombre, 
+        precio,
+        imagen,
+        cantidad
     });
 
     localStorage.setItem(
@@ -15,6 +15,22 @@ function agregarCarrito(nombre, precio, imagen){
     );
 
     alert(nombre + " agregado al carrito");
+}
+const existente = carrito.find(p => p.nombre === nombre);
+
+if(existente){
+
+    existente.cantidad += cantidad;
+
+}else{
+
+    carrito.push({
+        nombre,
+        precio,
+        imagen,
+        cantidad
+    });
+
 }
 
 function mostrarCarrito(){
