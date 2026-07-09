@@ -577,3 +577,73 @@ img {
 .form-pago button{
     margin-top: 10px;
 }
+.modal{
+    display:none;
+    position:fixed;
+    z-index:9999;
+    left:0;
+    top:0;
+    width:100%;
+    height:100%;
+    background:rgba(0,0,0,0.7);
+}
+
+.modal-contenido{
+    background:#FFF8F0;
+    width:90%;
+    max-width:550px;
+    margin:50px auto;
+    padding:30px;
+    border-radius:20px;
+    position:relative;
+    box-shadow:0 5px 20px rgba(0,0,0,0.3);
+}
+
+.cerrar{
+    position:absolute;
+    right:20px;
+    top:10px;
+    font-size:35px;
+    cursor:pointer;
+    color:#6F4E37;
+}
+
+.modal h2{
+    text-align:center;
+    color:#6F4E37;
+    margin-bottom:25px;
+}
+
+.modal form{
+    display:flex;
+    flex-direction:column;
+    gap:15px;
+}
+
+.modal input,
+.modal select{
+    padding:14px;
+    border:1px solid #d6c5b8;
+    border-radius:10px;
+    font-size:16px;
+    background:white;
+}
+
+.fila{
+    display:flex;
+    gap:10px;
+}
+
+.modal button{
+    background:#6F4E37;
+    color:white;
+    border:none;
+    padding:15px;
+    border-radius:10px;
+    font-size:18px;
+    cursor:pointer;
+}
+
+.modal button:hover{
+    background:#4B3225;
+}
