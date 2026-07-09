@@ -493,3 +493,38 @@ img {
         background-color:#6F4E37;
     }
 }
+.pago-container{
+    width: 80%;
+    margin: 50px auto;
+    background-color: #FFF8F0;
+    padding: 30px;
+    border-radius: 20px;
+    text-align: center;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.25);
+}
+
+.pago-container h2{
+    color: #6F4E37;
+    margin-bottom: 20px;
+}
+
+.metodos-pago{
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.btn-pago{
+    background-color: #6F4E37;
+    color: white;
+    text-decoration: none;
+    padding: 15px 25px;
+    border-radius: 10px;
+    font-size: 18px;
+    transition: 0.3s;
+}
+
+.btn-pago:hover{
+    background-color: #4B3225;
+}
