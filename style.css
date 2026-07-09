@@ -917,3 +917,42 @@ margin-bottom:20px;
 .siguiente{
     right:20px;
 }
+.calificar{
+
+    font-size:40px;
+
+    margin:20px 0;
+
+}
+
+.estrella{
+
+    cursor:pointer;
+
+    color:#ccc;
+
+    transition:.3s;
+
+}
+
+.estrella:hover{
+
+    transform:scale(1.2);
+
+}
+
+.activa{
+
+    color:gold;
+
+}
+
+.estrellas-mostrar{
+
+    color:gold;
+
+    font-size:25px;
+
+    margin-bottom:10px;
+
+}
