@@ -3,56 +3,175 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Carrito</title>
-<link rel="stylesheet" href="style.css">
+<title>Carrito AC Coffee</title>
+
+<style>
+
+body{
+    font-family: Arial, sans-serif;
+    background:#f5f5f5;
+    margin:0;
+    padding:20px;
+}
+
+h1{
+    text-align:center;
+}
+
+.producto{
+    background:white;
+    padding:20px;
+    margin:15px auto;
+    max-width:500px;
+    border-radius:10px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+}
+
+button{
+    background:#6F4E37;
+    color:white;
+    border:none;
+    padding:10px 15px;
+    border-radius:5px;
+    cursor:pointer;
+}
+
+button:hover{
+    opacity:.9;
+}
+
+#carrito{
+    background:white;
+    max-width:700px;
+    margin:30px auto;
+    padding:20px;
+    border-radius:10px;
+}
+
+.item{
+    display:flex;
+    justify-content:space-between;
+    margin:10px 0;
+}
+
+#total{
+    font-size:22px;
+    font-weight:bold;
+    margin-top:20px;
+}
+
+</style>
 </head>
+<body>
 
-<body onload="mostrarCarrito()">
+<h1>☕ AC Coffee</h1>
 
-<h1 class="titulo-menu">Tu Carrito</h1>
+<div class="producto">
+    <div>
+        <h3>Té Chai</h3>
+        <p>Q22</p>
+    </div>
+    <button onclick="agregarCarrito('Té Chai',22)">
+        Agregar
+    </button>
+</div>
 
-<section id="carrito-contenedor"></section>
+<div class="producto">
+    <div>
+        <h3>Frappé</h3>
+        <p>Q30</p>
+    </div>
+    <button onclick="agregarCarrito('Frappé',30)">
+        Agregar
+    </button>
+</div>
 
-<h2 id="total"></h2>
+<div class="producto">
+    <div>
+        <h3>Smoothie</h3>
+        <p>Q35</p>
+    </div>
+    <button onclick="agregarCarrito('Smoothie',35)">
+        Agregar
+    </button>
+</div>
 
-<center>
+<div id="carrito">
 
-<button class="vaciar-btn" onclick="vaciarCarrito()">
+<h2>🛒 Tu Carrito</h2>
+
+<div id="items"></div>
+
+<div id="total">Total: Q0</div>
+
+<br>
+
+<button onclick="vaciarCarrito()">
 Vaciar Carrito
-</button>
-
-<br><br>
-
-<button class="vaciar-btn" onclick="mostrarFormulario()">
-Finalizar Compra
-</button>
-
-</center>
-
-<div id="formulario" style="display:none; background:white; width:80%; margin:30px auto; padding:20px; border-radius:15px;">
-
-<h2>Datos del Pedido</h2>
-
-<input type="text" id="nombre" placeholder="Nombre Completo"><br><br>
-
-<input type="text" id="direccion" placeholder="Dirección"><br><br>
-
-<input type="tel" id="telefono" placeholder="Teléfono"><br><br>
-
-<select id="metodo">
-<option>Efectivo</option>
-<option>Tarjeta</option>
-</select>
-
-<br><br>
-
-<button onclick="confirmarCompra()">
-Confirmar Pedido
 </button>
 
 </div>
 
-<script src="carrito.js"></script>
+<script>
+
+let carrito = [];
+
+function agregarCarrito(nombre, precio){
+
+    carrito.push({
+        nombre,
+        precio
+    });
+
+    mostrarCarrito();
+
+    alert(nombre + " agregado al carrito");
+}
+
+function mostrarCarrito(){
+
+    let contenedor = document.getElementById("items");
+
+    let total = 0;
+
+    contenedor.innerHTML = "";
+
+    carrito.forEach((producto,index)=>{
+
+        total += producto.precio;
+
+        contenedor.innerHTML += `
+        <div class="item">
+            <span>${producto.nombre} - Q${producto.precio}</span>
+
+            <button onclick="eliminarProducto(${index})">
+                Eliminar
+            </button>
+        </div>
+        `;
+    });
+
+    document.getElementById("total").innerHTML =
+    "Total: Q" + total;
+}
+
+function eliminarProducto(index){
+
+    carrito.splice(index,1);
+
+    mostrarCarrito();
+}
+
+function vaciarCarrito(){
+
+    carrito = [];
+
+    mostrarCarrito();
+}
+
+</script>
 
 </body>
 </html>
