@@ -1,150 +1,58 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Carrito | AC Coffee</title>
-    <link rel="stylesheet" href="style.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Carrito</title>
+<link rel="stylesheet" href="style.css">
 </head>
 
 <body onload="mostrarCarrito()">
 
-    <nav class="navbar">
+<h1 class="titulo-menu">Tu Carrito</h1>
 
-        <button class="hamburger" onclick="toggleMenu()">
-            <span class="bar"></span>
-            <span class="bar"></span>
-            <span class="bar"></span>
-        </button>
+<section id="carrito-contenedor"></section>
 
-        <ul class="nav">
-            <li><a href="index.html">Inicio</a></li>
+<h2 id="total"></h2>
 
-            <li>
-                <a href="#">Menú</a>
-                <ul>
-                    <li><a href="Bebidas.html">Bebidas</a></li>
-                    <li><a href="Postres.html">Panadería y Postres</a></li>
-                    <li><a href="Comidas.html">Comidas</a></li>
-                </ul>
-            </li>
+<center>
 
-            <li><a href="ubicaciones.html">Ubicaciones</a></li>
-            <li><a href="info.html">Acerca de Nosotros</a></li>
-            <li><a href="horario.html">Horarios</a></li>
-            <li><a href="carrito.html">🛒</a></li>
-            <li><a href="contacto.html">Únete a nuestro equipo</a></li>
-        </ul>
+<button class="vaciar-btn" onclick="vaciarCarrito()">
+Vaciar Carrito
+</button>
 
-    </nav>
+<br><br>
 
-    <h1 class="titulo-menu">
-        Tu Carrito
-    </h1>
+<button class="vaciar-btn" onclick="mostrarFormulario()">
+Finalizar Compra
+</button>
 
-    <section id="carrito-contenedor"></section>
+</center>
 
-    <h2 id="total"></h2>
+<div id="formulario" style="display:none; background:white; width:80%; margin:30px auto; padding:20px; border-radius:15px;">
 
-    <center>
+<h2>Datos del Pedido</h2>
 
-        <button class="vaciar-btn" onclick="vaciarCarrito()">
-            Vaciar Carrito
-        </button>
+<input type="text" id="nombre" placeholder="Nombre Completo"><br><br>
 
-        <br><br>
+<input type="text" id="direccion" placeholder="Dirección"><br><br>
 
-        <button class="vaciar-btn" onclick="abrirModal()">
-            Finalizar Compra
-        </button>
+<input type="tel" id="telefono" placeholder="Teléfono"><br><br>
 
-    </center>
+<select id="metodo">
+<option>Efectivo</option>
+<option>Tarjeta</option>
+</select>
 
+<br><br>
 
-    <div id="modalPago" class="modal">
+<button onclick="confirmarCompra()">
+Confirmar Pedido
+</button>
 
-        <div class="modal-contenido">
+</div>
 
-            <span class="cerrar" onclick="cerrarModal()">
-                &times;
-            </span>
-
-            <h2>Confirmar Compra ☕</h2>
-
-            <form onsubmit="confirmarCompra(event)">
-
-                <input
-                    type="text"
-                    placeholder="Nombre Completo"
-                    required
-                >
-
-                <input
-                    type="email"
-                    placeholder="Correo Electrónico"
-                    required
-                >
-
-                <input
-                    type="tel"
-                    placeholder="Número de Teléfono"
-                    required
-                >
-
-                <input
-                    type="text"
-                    placeholder="Dirección de Entrega"
-                    required
-                >
-
-                <select required>
-                    <option value="">
-                        Seleccione Método de Pago
-                    </option>
-
-                    <option>
-                        Tarjeta de Crédito
-                    </option>
-
-                    <option>
-                        Tarjeta de Débito
-                    </option>
-
-                    <option>
-                        Efectivo al Recibir
-                    </option>
-                </select>
-
-                <input
-                    type="text"
-                    placeholder="Número de Tarjeta"
-                >
-
-                <div class="fila">
-
-                    <input
-                        type="text"
-                        placeholder="MM/AA"
-                    >
-
-                    <input
-                        type="text"
-                        placeholder="CVV"
-                    >
-
-                </div>
-
-                <button type="submit">
-                    Confirmar Pedido
-                </button>
-
-            </form>
-
-        </div>
-
-    </div>
-
-    <script src="carrito.js"></script>
+<script src="carrito.js"></script>
 
 </body>
 </html>
