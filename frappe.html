@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Frappé de Café | AC Coffee</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<nav class="navbar">
+<button class="hamburger" onclick="toggleMenu()">
+<span class="bar"></span>
+<span class="bar"></span>
+<span class="bar"></span>
+</button>
+  
+<ul class="nav">
+<li><a href="index.html">Inicio</a></li>
+<li>
+<a href="#">Menú</a>
+<ul>
+  
+<li><a href="Bebidas.html">Bebidas</a></li>
+<li><a href="Comidas.html">Comidas</a></li>
+<li><a href="Postres.html">Postres</a></li>
+</ul>
+</li>
+<li><a href="carrito.html">🛒</a></li>
+</ul>
+
+</nav>
+<section class="producto-detalle">
+<div class="imagen-producto">
+<img src="frappe.jpg">
+</div>
+
+<div class="detalle">
+<h1>Frappé de Café</h1>
+<div class="estrellas">
+★★★★★
+</div>
+
+<h2>Q30.00</h2>
+<p>
+Bebida helada preparada con espresso,
+hielo triturado, leche y crema batida.
+Ideal para disfrutar una tarde calurosa.
+</p>
+
+<div class="cantidad">
+<button onclick="cambiarCantidad(-1)">-</button>
+<span id="cantidad">1</span>
+<button onclick="cambiarCantidad(1)">+</button>
+</div>
+<button class="btn-carrito"
+onclick="agregarCarrito('Frappé de Café',30,'frappe.jpg')">
+Añadir al carrito
+</button>
+
+<button class="btn-favorito"
+
+onclick="favorito()">
+❤️ Agregar a Favoritos
+</button>
+</div>
+</section>
+
+<section class="reseñas">
+<h2>Calificación</h2>
+<div class="estrellas-grandes">
+★★★★★
+</div>
+
+<textarea id="comentario" placeholder="Escribe tu reseña...">
+
+</textarea>
+
+<button onclick="guardarReseña()">
+Enviar reseña
+</button>
+
+<div id="lista-reseñas"></div>
+
+</section>
+
+<footer>
+
+<p>
+
+AC Coffee © 2026 | Carmen & Adriana
+
+</p>
+
+</footer>
+
+<script src="carrito.js"></script>
+
+<script>
+
+function toggleMenu(){
+
+document.querySelector(".nav").classList.toggle("active");
+
+}
+
+let cantidad=1;
+
+function cambiarCantidad(valor){
+
+cantidad+=valor;
+
+if(cantidad<1){
+
+cantidad=1;
+
+}
+
+document.getElementById("cantidad").textContent=cantidad;
+
+}
+
+function favorito(){
+
+alert("Producto agregado a favoritos ❤️");
+
+}
+
+function guardarReseña(){
+
+const comentario=document.getElementById("comentario").value;
+
+if(comentario=="") return;
+
+const div=document.createElement("div");
+
+div.className="comentario";
+
+div.innerHTML=`
+
+★★★★★
+
+<p>${comentario}</p>
+
+`;
+
+document.getElementById("lista-reseñas").appendChild(div);
+
+document.getElementById("comentario").value="";
+
+}
+
+</script>
+
+</body>
+
+</html>
