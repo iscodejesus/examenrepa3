@@ -53,8 +53,10 @@ Ideal para disfrutar una tarde calurosa.
 <button onclick="cambiarCantidad(1)">+</button>
 </div>
 <button class="btn-carrito"
-onclick="agregarCarrito('Frappé de Café',30,'frappe.jpg')">
+onclick="agregarProducto()">
+
 Añadir al carrito
+
 </button>
 
 <button class="btn-favorito"
@@ -111,13 +113,25 @@ document.querySelector(".nav").classList.toggle("active");
 
 let cantidad=1;
 
-function cambiarCantidad(valor){
+function cambiarCantidad(valor)
+{
 
 cantidad+=valor;
 
 if(cantidad<1){
 
 cantidad=1;
+}
+    function agregarProducto(){
+
+    agregarCarrito(
+        "Frappé de Café",
+        30,
+        "frappe.jpg",
+        cantidad
+    );
+
+    alert("Producto agregado al carrito 🛒");
 
 }
 
