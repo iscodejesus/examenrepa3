@@ -1,49 +1,101 @@
-function mostrarCarrito() {
+function agregarCarrito(nombre, precio, imagen){
 
-    let carrito = JSON.parse(localStorage.getItem("carrito")) || [];
+    let carrito =
+    JSON.parse(localStorage.getItem("carrito")) || [];
 
-    let contenedor = document.getElementById("carrito-contenedor");
-    let totalElemento = document.getElementById("total");
+    carrito.push({
+        nombre,
+        precio,
+        imagen
+    });
 
-    if (!contenedor) return;
+    localStorage.setItem(
+        "carrito",
+        JSON.stringify(carrito)
+    );
 
-    contenedor.innerHTML = "";
+    alert("Producto agregado");
+}
+
+function mostrarCarrito(){
+
+    let carrito =
+    JSON.parse(localStorage.getItem("carrito")) || [];
+
+    let contenedor =
+    document.getElementById("carrito-contenedor");
 
     let total = 0;
 
-    carrito.forEach(function(producto, index) {
+    contenedor.innerHTML = "";
 
-        total += producto.precio;
+    carrito.forEach((producto,index)=>{
+
+        total += Number(producto.precio);
 
         contenedor.innerHTML += `
         <div class="producto-carrito">
-            <img src="${producto.imagen}" alt="${producto.nombre}">
+
+            <img src="${producto.imagen}"
+            width="100">
+
             <h2>${producto.nombre}</h2>
+
             <p>Q${producto.precio}</p>
+
             <button onclick="eliminarProducto(${index})">
-                Eliminar
+            Eliminar
             </button>
+
         </div>
         `;
     });
 
-    totalElemento.innerHTML = "Total: Q" + total;
+    document.getElementById("total").innerHTML =
+    "Total: Q" + total;
 }
 
-function eliminarProducto(index) {
+function eliminarProducto(index){
 
-    let carrito = JSON.parse(localStorage.getItem("carrito")) || [];
+    let carrito =
+    JSON.parse(localStorage.getItem("carrito")) || [];
 
-    carrito.splice(index, 1);
+    carrito.splice(index,1);
 
-    localStorage.setItem("carrito", JSON.stringify(carrito));
+    localStorage.setItem(
+        "carrito",
+        JSON.stringify(carrito)
+    );
 
     mostrarCarrito();
 }
 
-function vaciarCarrito() {
+function vaciarCarrito(){
 
     localStorage.removeItem("carrito");
 
     mostrarCarrito();
+}
+
+function mostrarFormulario(){
+
+    document.getElementById("formulario")
+    .style.display = "block";
+}
+
+function confirmarCompra(){
+
+    let nombre =
+    document.getElementById("nombre").value;
+
+    if(nombre==""){
+        alert("Ingrese su nombre");
+        return;
+    }
+
+    alert("Pedido confirmado. Gracias por comprar en AC Coffee ☕");
+
+    localStorage.removeItem("carrito");
+
+    location.reload();
 }
