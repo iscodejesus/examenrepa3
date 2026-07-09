@@ -648,5 +648,77 @@ img {
     background:#4B3225;
 }
 
+.carousel{
+    max-width: 900px;
+    margin: auto;
+}
 
+.carousel-item img{
+    width: 100%;
+    max-height: 500px;
+    object-fit: cover;
+}
+
+/* Título */
+.container h2{
+    color: #F5E6D3;
+    font-size: 40px;
+    font-weight: bold;
+    margin-bottom: 30px;
+}
+
+/* Tarjetas */
+.card{
+    border: none;
+    border-radius: 18px;
+    overflow: hidden;
+    background-color: #F8F1E7;
+    transition: all 0.3s ease;
+}
+
+/* Efecto al pasar el mouse */
+.card:hover{
+    transform: translateY(-8px);
+    box-shadow: 0px 10px 25px rgba(0,0,0,.3);
+}
+
+/* Imagen */
+.card img{
+    height: 250px;
+    object-fit: cover;
+}
+
+/* Cuerpo de la tarjeta */
+.card-body{
+    text-align: center;
+    padding: 20px;
+}
+
+/* Título */
+.card-title{
+    color: #4E342E;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+/* Descripción */
+.card-text{
+    color: #6D4C41;
+    font-size: 16px;
+}
+
+/* Botón */
+.btn-dark{
+    background-color: #5D4037;
+    border: none;
+    border-radius: 30px;
+    padding: 10px 25px;
+    transition: .3s;
+}
+
+/* Botón al pasar el mouse */
+.btn-dark:hover{
+    background-color: #8D6E63;
+    color: white;
+}
 
