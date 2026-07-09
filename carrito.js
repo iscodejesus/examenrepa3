@@ -11,7 +11,7 @@ function mostrarCarrito() {
 
     let total = 0;
 
-    carrito.forEach((producto, index) => {
+    carrito.forEach(function(producto, index) {
 
         total += producto.precio;
 
@@ -20,7 +20,6 @@ function mostrarCarrito() {
             <img src="${producto.imagen}" alt="${producto.nombre}">
             <h2>${producto.nombre}</h2>
             <p>Q${producto.precio}</p>
-
             <button onclick="eliminarProducto(${index})">
                 Eliminar
             </button>
