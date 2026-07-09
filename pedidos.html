@@ -1,43 +1,85 @@
 <!DOCTYPE html>
 <html lang="es">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width-device" initial scale>
-    </head>
-    <title>AC Coffee </title>
-    <link rel="stylesheet" href="style.css">
-    <body>
-        
-        <nav class="navbar">
-        <ul class="nav">
-        <li><a href="index.html"></a></li>
-        <li><a href="#">Menu</a>
-            <ul>
-                <li><a href="Bebidas.html">Bebidas</a></li>
-                <li><a href="Postres.html">Panaderia y Postres</a></li>
-                <li><a href="Comidas.html"></a>Comidas</li>
-            </ul>
-        </li>
-        <li><a href="pedidos.html">Pedidos</a></li>
-        <li><a href="ubicaciones.html">Ubicaciones</a></li>
-        <li><a href="info.html">Acerca de Nosotros</a></li>
-        <li><a href="horario.html">Horarios</a></li>
-        <li><a href="carrito.html">🛒</a></li>
-        <li><a href="contacto.html">Unete a nuestro equipo</a></li>
-        </ul>
-             <button class="hamburger" aria-label="Abrir menú">
-      <span class="bar"></span>
-      <span class="bar"></span>
-      <span class="bar"></span>
-    </button>
-        </nav>
-    </body>
-    <footer>
-    <div class="redes">
-        <a href="https://www.instagram.com/ac_coffeegt?igsh=MXQ4dHN6b2NnM3cweg==">Instagram</a>
-        <a href="https://www.facebook.com/share/1GqbHDVcX5/">Facebook</a>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Finalizar Pedido | AC Coffee</title>
+</head>
+<body>
+
+<div class="contenedor">
+
+    <h1>☕ Finalizar Pedido</h1>
+
+    <div class="resumen">
+
+        <h2>Resumen de Compra</h2>
+
+        <p>Productos seleccionados en tu carrito.</p>
+
+        <p><strong>Total:</strong> Q0.00</p>
+
     </div>
 
-    <center><p>AC Coffee © 2026 | Creado por Adriana & Carmen </p></center>
-    </footer>
+    <form onsubmit="confirmarPedido(event)">
+
+        <input type="text"
+               placeholder="Nombre Completo"
+               required>
+
+        <input type="email"
+               placeholder="Correo Electrónico"
+               required>
+
+        <input type="tel"
+               placeholder="Número de Teléfono"
+               required>
+
+        <input type="text"
+               placeholder="Dirección de Entrega"
+               required>
+
+        <select required>
+            <option value="">Método de Pago</option>
+            <option>Tarjeta de Crédito</option>
+            <option>Tarjeta de Débito</option>
+            <option>Efectivo al Recibir</option>
+        </select>
+
+        <input type="text"
+               placeholder="Número de Tarjeta">
+
+        <input type="text"
+               placeholder="Fecha de Vencimiento">
+
+        <input type="text"
+               placeholder="CVV">
+
+        <textarea rows="4"
+                  placeholder="Notas o instrucciones especiales"></textarea>
+
+        <button type="submit">
+            Confirmar Pedido
+        </button>
+
+    </form>
+
+</div>
+
+<script>
+
+function confirmarPedido(event){
+
+    event.preventDefault();
+
+    alert(
+        "✅ Pedido confirmado\n\nGracias por comprar en AC Coffee ☕"
+    );
+
+    window.location.href = "index.html";
+}
+
+</script>
+
+</body>
 </html>
