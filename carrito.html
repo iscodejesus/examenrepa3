@@ -1,3 +1,36 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width-device" initial scale>
+    </head>
+    <title>AC Coffee </title>
+    <link rel="stylesheet" href="style.css">
+    <body>
+        
+        <nav class="navbar">
+            <button class="hamburger" onclick="toggleMenu()">
+
+    <span class="bar"></span>
+    <span class="bar"></span>
+    <span class="bar"></span>
+
+</button>
+        <ul class="nav">
+        <li><a href="index.html">Inicio</a></li>
+        <li><a href="#">Menu</a>
+            <ul>
+                <li><a href="Bebidas.html">Bebidas</a></li>
+                <li><a href="Postres.html">Panaderia y Postres</a></li>
+                <li><a href="Comidas.html"></a>Comidas</li>
+            </ul>
+        </li>
+        <li><a href="ubicaciones.html">Ubicaciones</a></li>
+        <li><a href="info.html">Acerca de Nosotros</a></li>
+        <li><a href="horario.html">Horarios</a></li>
+        <li><a href="carrito.html">🛒</a></li>
+        <li><a href="contacto.html">Unete a nuestro equipo</a></li>
+        </ul>
 <a href="index.html" class="back">
 ← Volver
 </a>
