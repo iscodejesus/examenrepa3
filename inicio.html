@@ -1,157 +1,57 @@
 <!DOCTYPE html>
 <html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AC Coffee</title>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width-device" initial scale>
+    </head>
+    <title>AC Coffee </title>
     <link rel="stylesheet" href="style.css">
+    <body>
+        
+        <nav class="navbar">
+            <button class="hamburger" onclick="toggleMenu()">
 
-</head>
-<body>
-<nav class="navbar">
-<button class="hamburger" onclick="toggleMenu()">
-
-<span class="bar"></span>
-<span class="bar"></span>
-<span class="bar"></span>
+    <span class="bar"></span>
+    <span class="bar"></span>
+    <span class="bar"></span>
 
 </button>
+        <ul class="nav">
+        <li><a href="inicio.html"></a></li>
+        <li><a href="#">Menu</a> 
+            <ul>
+                <li><a href="Bebidas.html">Bebidas</a></li>
+                <li><a href="Postres.html">Panaderia y Postres</a></li>
+                <li><a href="Comidas.html"></a>Comidas</li>
+            </ul>
+        </li>
+        <li><a href="pedidos.html">Pedidos</a></li>
+        <li><a href="ubicaciones.html">Ubicaciones</a></li>
+        <li><a href="info.html">Acerca de Nosotros</a></li>
+        <li><a href="horario.html">Horarios</a></li>
+        <li><a href="carrito.html">🛒</a></li>
+        <li><a href="contacto.html">Unete a nuestro equipo</a></li>
+        </ul>
+        </nav>
+    <center><h1>Bienvenido a AC Coffee</h1></center>
+    <center><h3>Cada taza cuenta una historia.</h3></center>
+  <script>
 
-<ul class="nav">
-<li><a href="inicio.html">Inicio</a></li>
-<li>
-<a href="#">Menú</a>
-<ul>
-<li><a href="Bebidas.html">Bebidas</a></li>
-<li><a href="Postres.html">Panadería y Postres</a></li>
-<li><a href="Comidas.html">Comidas</a></li>
-</ul>
-</li>
-
-<li><a href="pedidos.html">Pedidos</a></li>
-<li><a href="ubicaciones.html">Ubicaciones</a></li>
-<li><a href="info.html">Acerca de Nosotros</a></li>
-<li><a href="horario.html">Horarios</a></li>
-<li><a href="carrito.html">🛒</a></li>
-<li><a href="contacto.html">Únete a nuestro equipo</a></li>
-</ul>
-</nav>
-<div class="carrusel">
-
-    <div class="slide activo">
-        <img src="cheesecake.jpg" alt="Cheesecake">
-
-        <div class="texto-carrusel">
-            <h1>Bienvenido a AC Coffee</h1>
-            <p>Cada taza cuenta una historia.</p>
-
-            <a href="Bebidas.html">
-                Explorar Menú
-            </a>
-        </div>
-    </div>
-
-
-    <div class="slide">
-        <img src="chai.jpg" alt="Chai">
-
-        <div class="texto-carrusel">
-            <h1>Bebidas Artesanales</h1>
-            <p>Preparadas con ingredientes de calidad.</p>
-
-            <a href="Bebidas.html">
-                Ver Bebidas
-            </a>
-        </div>
-    </div>
-
-
-    <div class="slide">
-        <img src="frappe.jpg" alt="Frappe">
-
-        <div class="texto-carrusel">
-            <h1>Sabores Únicos</h1>
-            <p>Disfruta café, postres y mucho más.</p>
-
-            <a href="Postres.html">
-                Ver Postres
-            </a>
-        </div>
-    </div>
-
-
-    <button class="anterior" onclick="moverSlide(-1)">❮</button>
-
-    <button class="siguiente" onclick="moverSlide(1)">❯</button>
-
-
-</div>
-
-<footer class="mt-5">
-<div class="redes">
-<a href="https://www.instagram.com/ac_coffeegt">Instagram</a>
-
-<a href="https://www.facebook.com">Facebook</a>
-</div>
-
-<p>AC Coffee © 2026 | Creado por Adriana & Carmen</p>
-</footer>
-
-<script>
 function toggleMenu(){
-document.querySelector(".nav")
-.classList.toggle("active");
+
+    document.querySelector(".nav")
+    .classList.toggle("active");
 }
-</script>
-
-    <script>
-
-let posicion = 0;
-
-let slides = document.querySelectorAll(".slide");
-
-
-function mostrarSlide(){
-
-    slides.forEach(slide=>{
-        slide.classList.remove("activo");
-    });
-
-
-    slides[posicion].classList.add("activo");
-
-}
-
-
-
-function moverSlide(numero){
-
-    posicion += numero;
-
-
-    if(posicion >= slides.length){
-        posicion = 0;
-    }
-
-
-    if(posicion < 0){
-        posicion = slides.length - 1;
-    }
-
-
-    mostrarSlide();
-
-}
-
-
-
-setInterval(()=>{
-
-    moverSlide(1);
-
-},4000);
-
 
 </script>
-</body>
+    </body>
+
+    <footer>
+    <div class="redes">
+        <a href="https://www.instagram.com/ac_coffeegt?igsh=MXQ4dHN6b2NnM3cweg==">Instagram</a>
+        <a href="https://www.facebook.com/share/1GqbHDVcX5/">Facebook</a>
+    </div>
+
+    <center><p>AC Coffee © 2026 | Creado por Adriana & Carmen </p></center>
+    </footer>
 </html>
