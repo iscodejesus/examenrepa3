@@ -6,9 +6,11 @@
     <title>Carrito | AC Coffee</title>
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body onload="mostrarCarrito()">
 
     <nav class="navbar">
+
         <button class="hamburger" onclick="toggleMenu()">
             <span class="bar"></span>
             <span class="bar"></span>
@@ -19,7 +21,7 @@
             <li><a href="index.html">Inicio</a></li>
 
             <li>
-                <a href="#">Menu</a>
+                <a href="#">Menú</a>
                 <ul>
                     <li><a href="Bebidas.html">Bebidas</a></li>
                     <li><a href="Postres.html">Panadería y Postres</a></li>
@@ -33,6 +35,7 @@
             <li><a href="carrito.html">🛒</a></li>
             <li><a href="contacto.html">Únete a nuestro equipo</a></li>
         </ul>
+
     </nav>
 
     <h1 class="titulo-menu">
@@ -44,38 +47,73 @@
     <h2 id="total"></h2>
 
     <center>
-
         <button class="vaciar-btn" onclick="vaciarCarrito()">
             Vaciar Carrito
         </button>
-
-        <br><br>
-
-        <button class="vaciar-btn" onclick="finalizarCompra()">
-            Finalizar Compra
-        </button>
-
     </center>
 
     <div class="pago-container">
 
-        <h2>Métodos de Pago</h2>
+        <h2>Finalizar Compra</h2>
 
-        <div class="metodos-pago">
+        <form class="form-pago" onsubmit="confirmarCompra(event)">
 
-            <a href="https://wa.me/50212345678"
-               target="_blank"
-               class="btn-pago">
-                WhatsApp
-            </a>
+            <input
+                type="text"
+                placeholder="Nombre Completo"
+                required
+            >
 
-            <a href="https://www.paypal.com/"
-               target="_blank"
-               class="btn-pago">
-                PayPal
-            </a>
+            <input
+                type="email"
+                placeholder="Correo Electrónico"
+                required
+            >
 
-        </div>
+            <input
+                type="tel"
+                placeholder="Número de Teléfono"
+                required
+            >
+
+            <select required>
+                <option value="">
+                    Seleccione Método de Pago
+                </option>
+
+                <option>
+                    Tarjeta de Crédito
+                </option>
+
+                <option>
+                    Tarjeta de Débito
+                </option>
+
+                <option>
+                    Efectivo al Recibir
+                </option>
+            </select>
+
+            <input
+                type="text"
+                placeholder="Número de Tarjeta"
+            >
+
+            <input
+                type="text"
+                placeholder="Fecha de Vencimiento (MM/AA)"
+            >
+
+            <input
+                type="text"
+                placeholder="CVV"
+            >
+
+            <button type="submit" class="vaciar-btn">
+                Confirmar Compra
+            </button>
+
+        </form>
 
     </div>
 
@@ -83,24 +121,21 @@
 
     <script>
 
-        function toggleMenu(){
-            document.querySelector(".nav")
-            .classList.toggle("active");
+        function toggleMenu() {
+            document
+                .querySelector(".nav")
+                .classList
+                .toggle("active");
         }
 
-        function finalizarCompra(){
+        function confirmarCompra(event) {
 
-            let total =
-            document.getElementById("total").innerText;
+            event.preventDefault();
 
-            let mensaje =
-            "Hola, quiero realizar una compra en AC Coffee.%0A%0A" +
-            total;
-
-            window.open(
-                "https://wa.me/50212345678?text=" + mensaje,
-                "_blank"
+            alert(
+                "¡Compra confirmada! Gracias por comprar en AC Coffee ☕"
             );
+
         }
 
     </script>
