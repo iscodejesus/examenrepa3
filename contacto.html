@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width-device" initial scale>
+    </head>
+    <title>AC Coffee </title>
+    <link rel="stylesheet" href="style.css">
+    <body>
+        
+        <nav class="navbar">
+            <button class="hamburger" onclick="toggleMenu()">
+
+    <span class="bar"></span>
+    <span class="bar"></span>
+    <span class="bar"></span>
+
+</button>
+        <ul class="nav">
+        <li><a href="index.html">Inicio</a></li>
+        <li><a href="#">Menu</a>
+            <ul>
+                <li><a href="Bebidas.html">Bebidas</a></li>
+                <li><a href="Postres.html">Panaderia y Postres</a></li>
+                <li><a href="Comidas.html"></a>Comidas</li>
+            </ul>
+        </li>
+        <li><a href="ubicaciones.html">Ubicaciones</a></li>
+        <li><a href="info.html">Acerca de Nosotros</a></li>
+        <li><a href="horario.html">Horarios</a></li>
+        <li><a href="carrito.html">🛒</a></li>
+        <li><a href="contacto.html">Unete a nuestro equipo</a></li>
+        </ul>
+        </nav>
+    <section class="trabajo">
+    <center><h1>¿Quieres formar parte de nuestro equipo?</h1></center>
+    <center>Estamos contratando personas responsables, creativas y con ganas de trabajar<br>
+     para unirse a nuestro equipo. Ofrecemos un buen ambiente laboral, oportunidad de crecimiento y horarios flexibles.<br>
+     No es necesaria la experiencia si tienes actitud y deseos de aprender.<br></center>
+
+      <form action="https://formspree.io/f/mykoanke" method="post">
+        <ul>
+            <li>
+                <label for="nombre">Nombre Completo:</label>
+                <input type="text" id="nombre" name="nombre" required>
+            </li>
+
+            <li>
+                <label for="correo">Correo Electrónico:</label>
+                <input type="email" id="correo" name="correo" required>
+            </li>
+
+            <li>
+                <label for="mensaje">¿Por qué te gustaría trabajar con nosotros?</label>
+                <textarea id="mensaje" name="mensaje" required></textarea>
+            </li>
+
+            <li>
+                <label for="cv">Enlace de CV:</label>
+                <input type="url" id="cv" name="cv" placeholder="https://drive.google.com/...">
+            </li>
+
+            <li>
+                <label for="experiencia">Experiencia o habilidades:</label>
+                <textarea id="experiencia" name="experiencia"></textarea>
+            </li>
+                <input type="submit" value="Enviar Solicitud">
+        </ul>
+    </form>
+    </section>
+        <script>
+
+function toggleMenu(){
+
+    document.querySelector(".nav")
+    .classList.toggle("active");
+}
+
+</script>
+    </body>
+    <footer>
+    <div class="redes">
+        <a href="https://www.instagram.com/ac_coffeegt?igsh=MXQ4dHN6b2NnM3cweg==">Instagram</a>
+        <a href="https://www.facebook.com/share/1GqbHDVcX5/">Facebook</a>
+    </div>
+
+    <center><p>AC Coffee © 2026 | Creado por Adriana & Carmen </p></center>
+    </footer>
+</html>

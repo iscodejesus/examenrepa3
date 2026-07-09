@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carrito | AC Coffee</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body onload="mostrarCarrito()">
+    <nav class="navbar">
+        <button class="hamburger" onclick="toggleMenu()">
+    <span class="bar"></span>
+    <span class="bar"></span>
+    <span class="bar"></span>
+</button>
+        <ul class="nav">
+                    <li><a href="index.html">Inicio</a></li>
+
+            <li>
+                <a href="#">Menu</a>
+                <ul>
+                    <li><a href="Bebidas.html">Bebidas</a></li>
+                    <li><a href="Postres.html">Panadería y Postres</a></li>
+                    <li><a href="Comidas.html">Comidas</a></li>
+                </ul>
+            </li>
+            <li><a href="ubicaciones.html">Ubicaciones</a></li>
+            <li><a href="info.html">Acerca de Nosotros</a></li>
+            <li><a href="horario.html">Horarios</a></li>
+        <li><a href="carrito.html">🛒</a></li>
+        <li><a href="contacto.html">Unete a nuestro equipo</a></li>
+        </ul>
+    </nav>
+
+    <h1 class="titulo-menu">
+        Tu Carrito
+    </h1>
+
+    <section id="carrito-contenedor"> </section>
+
+    <h2 id="total"></h2>
+    <center>
+        <button class="vaciar-btn"
+        onclick="vaciarCarrito()">
+        Vaciar Carrito
+        </button>
+    </center>
+
+<script src="carrito.js"></script>
+    <script>
+
+function toggleMenu(){
+
+    document.querySelector(".nav")
+    .classList.toggle("active");
+}
+
+</script>
+
+</body>
+</html>

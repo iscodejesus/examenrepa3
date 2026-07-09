@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width-device" initial scale>
+    </head>
+    <title>AC Coffee </title>
+    <link rel="stylesheet" href="style.css">
+    <body>
+        
+        <nav class="navbar">
+            <button class="hamburger" onclick="toggleMenu()">
+
+    <span class="bar"></span>
+    <span class="bar"></span>
+    <span class="bar"></span>
+
+</button>
+        <ul class="nav">
+        <li><a href="index.html">Inicio</a></li>
+        <li><a href="#">Menu</a> 
+            <ul>
+                <li><a href="Bebidas.html">Bebidas</a></li>
+                <li><a href="Postres.html">Panaderia y Postres</a></li>
+                <li><a href="Comidas.html"></a>Comidas</li>
+            </ul>
+        </li>
+        <li><a href="ubicaciones.html">Ubicaciones</a></li>
+        <li><a href="info.html">Acerca de Nosotros</a></li>
+        <li><a href="horario.html">Horarios</a></li>
+        <li><a href="carrito.html">🛒</a></li>
+        <li><a href="contacto.html">Unete a nuestro equipo</a></li>
+        </ul>
+             <button class="hamburger" aria-label="Abrir menú">
+      <span class="bar"></span>
+      <span class="bar"></span>
+      <span class="bar"></span>
+    </button>
+        </nav>
+    <section class="horario">
+    <h2>Horarios de Atención</h2>
+    <div class="tabla-horarios">
+        <div class="dia">
+            <span>Lunes - Viernes</span>
+            <span>7:00 AM - 8:00 PM</span>
+        </div>
+
+        <div class="dia">
+            <span>Sábado</span>
+            <span>8:00 AM - 9:00 PM</span>
+        </div>
+
+        <div class="dia">
+            <span>Domingo</span>
+            <span>9:00 AM - 9:00 PM</span>
+        </div>
+
+        <div class="dia">
+            <span>💬 Atención en línea</span>
+            <span>8:00 AM - 7:00 PM</span>
+         </div>
+    </div>
+</section>
+        <script>
+
+function toggleMenu(){
+
+    document.querySelector(".nav")
+    .classList.toggle("active");
+}
+
+</script>
+    </body>
+    <footer>
+    <div class="redes">
+        <a href="https://www.instagram.com/ac_coffeegt?igsh=MXQ4dHN6b2NnM3cweg==">Instagram</a>
+        <a href="https://www.facebook.com/share/1GqbHDVcX5/">Facebook</a>
+    </div>
+
+    <center><p>AC Coffee © 2026 | Creado por Adriana & Carmen </p></center>
+    </footer>
+</html>
