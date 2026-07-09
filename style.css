@@ -503,28 +503,44 @@ img {
     box-shadow: 0 5px 15px rgba(0,0,0,0.25);
 }
 
+.pago-container{
+    width: 80%;
+    margin: 50px auto;
+    background: #FFF8F0;
+    padding: 30px;
+    border-radius: 20px;
+    text-align: center;
+}
+
 .pago-container h2{
     color: #6F4E37;
     margin-bottom: 20px;
 }
 
-.metodos-pago{
+.form-pago{
     display: flex;
-    justify-content: center;
-    gap: 20px;
-    flex-wrap: wrap;
+    flex-direction: column;
+    gap: 15px;
 }
 
-.btn-pago{
-    background-color: #6F4E37;
-    color: white;
-    text-decoration: none;
-    padding: 15px 25px;
+.form-pago input,
+.form-pago select{
+    padding: 15px;
+    border: 1px solid #d6c5b8;
     border-radius: 10px;
-    font-size: 18px;
-    transition: 0.3s;
+    font-size: 16px;
 }
 
-.btn-pago:hover{
-    background-color: #4B3225;
+.form-pago button{
+    background: #6F4E37;
+    color: white;
+    border: none;
+    padding: 15px;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 18px;
+}
+
+.form-pago button:hover{
+    background: #4B3225;
 }
