@@ -647,3 +647,68 @@ img {
 .modal button:hover{
     background:#4B3225;
 }
+body{
+    margin:0;
+    font-family:Arial, sans-serif;
+    background:#f5f1eb;
+}
+
+.contenedor{
+    max-width:800px;
+    margin:40px auto;
+    background:white;
+    padding:40px;
+    border-radius:20px;
+    box-shadow:0 5px 20px rgba(0,0,0,0.2);
+}
+
+h1{
+    text-align:center;
+    color:#6F4E37;
+}
+
+.resumen{
+    background:#FFF8F0;
+    padding:20px;
+    border-radius:15px;
+    margin-bottom:25px;
+}
+
+.resumen h2{
+    color:#6F4E37;
+}
+
+form{
+    display:flex;
+    flex-direction:column;
+    gap:15px;
+}
+
+input,
+select,
+textarea{
+    padding:15px;
+    border:1px solid #ccc;
+    border-radius:10px;
+    font-size:16px;
+}
+
+textarea{
+    resize:none;
+}
+
+button{
+    background:#6F4E37;
+    color:white;
+    border:none;
+    padding:15px;
+    border-radius:10px;
+    cursor:pointer;
+    font-size:18px;
+}
+
+button:hover{
+    background:#4B3225;
+}
+
+
